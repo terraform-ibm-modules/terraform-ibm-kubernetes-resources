@@ -60,7 +60,7 @@
             "diagrams": [
               {
                 "diagram": {
-                  "caption": "Resources on Red Hat OpenShift cluster.",
+                  "caption": "Resources on Red Hat OpenShift cluster",
                   "url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/main/reference-architecture/deployable-architecture-kubernetes-resources.svg",
                   "type": "image/svg+xml"
                 },
