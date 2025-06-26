@@ -27,7 +27,6 @@ This repository contains DA of Kubernetes resources.
 <!-- BEGIN OVERVIEW HOOK -->
 ## Overview
 * [terraform-ibm-kubernetes-resources](#terraform-ibm-kubernetes-resources)
-* [Examples](./examples)
 * [Contributing](#contributing)
 <!-- END OVERVIEW HOOK -->
 
