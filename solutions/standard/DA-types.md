@@ -12,31 +12,32 @@ The `namespaces` input variable allows you to provide a list of namespaces along
 
 ### Example namespaces
 
-```hcl
+```json
 [
   {
-    name = "dev"
-    metadata = {
-      labels = {
-        environment = "development"
-        team        = "backend"
-      }
-      annotations = {
-        "owner" = "dev-team@example.com"
+    "name": "dev",
+    "metadata": {
+      "labels": {
+        "environment": "development",
+        "team": "backend"
+      },
+      "annotations": {
+        "owner": "dev-team@example.com"
       }
     }
   },
   {
-    name = "prod"
-    metadata = {
-      labels = {
-        environment = "production"
-        team        = "frontend"
-      }
-      annotations = {
-        "owner" = "prod-team@example.com"
+    "name": "prod",
+    "metadata": {
+      "labels": {
+        "environment": "production",
+        "team": "frontend"
+      },
+      "annotations": {
+        "owner": "prod-team@example.com"
       }
     }
   }
 ]
+
 ```
