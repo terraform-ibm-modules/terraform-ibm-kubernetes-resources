@@ -7,6 +7,7 @@ variable "ibmcloud_api_key" {
 variable "region" {
   type        = string
   description = "The region of the existing cluster in which you want to create resources."
+  default     = "us-south"
 }
 
 variable "provider_visibility" {
