@@ -1,4 +1,4 @@
 {
   "ibmcloud_api_key": $VALIDATION_APIKEY,
-  "namespaces": ["mock-ns"]
+  "namespaces": [{"name": "mock-ns"}]
 }
