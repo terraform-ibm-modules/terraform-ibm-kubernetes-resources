@@ -96,3 +96,39 @@ func TestDAInSchematics(t *testing.T) {
 	require.NoError(t, options.RunSchematicTest(), "This should not have errored")
 	cleanupTerraform(t, existingTerraformOptions, prefix)
 }
+
+func TestDAUpgradeInSchematics(t *testing.T) {
+	t.Parallel()
+
+	common.UniqueId()
+	prefix := fmt.Sprintf("ocp-upg-%s", common.UniqueId())
+	region, existingTerraformOptions := setupTerraform(t, prefix, "./existing-resources")
+
+	namespaces := []map[string]interface{}{
+		{
+			"name": fmt.Sprintf("ns-upg-1-%s", common.UniqueId()),
+		},
+		{
+			"name": fmt.Sprintf("ns-upg-2-%s", common.UniqueId()),
+		},
+	}
+
+	options := testschematic.TestSchematicOptionsDefault(&testschematic.TestSchematicOptions{
+		Testing:               t,
+		TarIncludePatterns:    []string{"*.tf", solutionsDir + "/*.*"},
+		TemplateFolder:        solutionsDir,
+		Tags:                  []string{"test-schematic"},
+		DeleteWorkspaceOnFail: false,
+	})
+
+	options.TerraformVars = []testschematic.TestSchematicTerraformVar{
+		{Name: "ibmcloud_api_key", Value: options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], DataType: "string", Secure: true},
+		{Name: "region", Value: region, DataType: "string"},
+		{Name: "cluster_name", Value: terraform.Output(t, existingTerraformOptions, "cluster_name"), DataType: "string"},
+		{Name: "resource_group_id", Value: terraform.Output(t, existingTerraformOptions, "resource_group_id"), DataType: "string"},
+		{Name: "namespaces", Value: namespaces, DataType: "list(object{})"},
+	}
+
+	require.NoError(t, options.RunSchematicUpgradeTest(), "This should not have errored")
+	cleanupTerraform(t, existingTerraformOptions, prefix)
+}
