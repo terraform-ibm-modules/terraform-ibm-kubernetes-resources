@@ -32,7 +32,7 @@ TF_VARS_FILE="terraform.tfvars"
   cd "${cwd}"
   jq -r --arg cluster_name_key "${cluster_name_key}" \
         --arg cluster_name_value "${cluster_name_value}" \
-        '. + {($cluster_name_key): $cluster_name_value' "${JSON_FILE}" > tmpfile && mv tmpfile "${JSON_FILE}" || exit 1
+        '. + {($cluster_name_key): $cluster_name_value}' "${JSON_FILE}" > tmpfile && mv tmpfile "${JSON_FILE}" || exit 1
 
   echo "Pre-validation completed successfully."
 )
