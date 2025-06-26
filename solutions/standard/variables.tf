@@ -24,11 +24,6 @@ variable "cluster_name" {
   description = "The name of the existing cluster in which you want to create resources."
 }
 
-variable "resource_group_id" {
-  type        = string
-  description = "The ID of the resource group in which cluster has been deployed."
-}
-
 
 variable "cluster_config_endpoint_type" {
   description = "Specify which type of endpoint to use for cluster config access: 'default', 'private', 'vpe', 'link'. A 'default' value uses the default endpoint of the cluster."

@@ -1,5 +1,5 @@
 <!-- Update this title with a descriptive name. Use sentence case. -->
-# Terraform modules template project
+# Kubernetes resources
 
 <!--
 Update status and "latest release" badges:
@@ -20,7 +20,7 @@ For information, see "Module names and descriptions" at
 https://terraform-ibm-modules.github.io/documentation/#/implementation-guidelines?id=module-names-and-descriptions
 -->
 
-TODO: Replace this with a description of the modules in this repo.
+This repository contains DA of Kubernetes resources.
 
 
 <!-- The following content is automatically populated by the pre-commit hook -->
@@ -42,7 +42,7 @@ https://terraform-ibm-modules.github.io/documentation/#/implementation-guideline
 
 
 <!-- Replace this heading with the name of the root level module (the repo name) -->
-## terraform-ibm-module-template
+## terraform-ibm-kubernetes-resources
 
 ### Usage
 
