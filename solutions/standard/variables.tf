@@ -6,7 +6,7 @@ variable "ibmcloud_api_key" {
 
 variable "region" {
   type        = string
-  description = "The IBM Cloud region where the cluster is provisioned."
+  description = "The region of the existing cluster in which you want to create resources."
 }
 
 variable "provider_visibility" {
@@ -21,12 +21,12 @@ variable "provider_visibility" {
 
 variable "cluster_name" {
   type        = string
-  description = "The name that is assigned to the provisioned cluster."
+  description = "The name of the existing cluster in which you want to create resources."
 }
 
 variable "resource_group_id" {
   type        = string
-  description = "The ID of an existing IBM Cloud resource group where the cluster is grouped."
+  description = "The ID of the resource group in which cluster has been deployed."
 }
 
 
@@ -45,5 +45,5 @@ variable "namespaces" {
       annotations = map(string)
     }))
   }))
-  description = "Set of namespaces to create"
+  description = "Set of namespaces to create. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/blob/main/solutions/standard/DA-types.md#namespaces-)"
 }
