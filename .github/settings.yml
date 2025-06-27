@@ -1,3 +1,4 @@
+
 # The settings are inherited from common repository repo-settings (same file name and location)
 # You can append settings that are deeply merged with the inherited settings.
 #
@@ -15,14 +16,14 @@ repository:
   # By changing this field, you rename the repository.
 
   # Uncomment this name property and set the name to the current repo name.
-  # name: ""
+   name: terraform-ibm-kubernetes-resources
 
   # The description is displayed under the repository name on the
   # organization page and in the 'About' section of the repository.
 
   # Uncomment this description property
   # and update the description to the current repo description.
-  # description: ""
+   description: "Provision Kubernetes resources on an existing cluster."
 
   # Use a comma-separated list of topics to set on the repo (ensure not to use any caps in the topic string).
-  topics: terraform, ibm-cloud, terraform-module
+  topics: terraform, ibm-cloud, deployable-architecture, kubernetes, openshift, core-team, containers
