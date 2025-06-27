@@ -1,0 +1,149 @@
+{
+  "products": [
+    {
+      "name": "deploy-arch-ibm-kubernetes-resources",
+      "label": "Cloud automation for Kubernetes Resources",
+      "product_kind": "solution",
+      "tags": [
+        "containers",
+        "target_terraform",
+        "target_roks",
+        "terraform",
+        "solution",
+        "ibm_created",
+        "clusters"
+      ],
+      "keywords": [
+        "openshift",
+        "cluster",
+        "IaC",
+        "infrastructure as code",
+        "terraform",
+        "solution"
+      ],
+      "short_description": "Automates the deployment of Kubernetes resources.",
+      "long_description": "This automation streamlines the deployment of Kubernetes resources such as namespace on an existing cluster.",
+      "offering_docs_url": "https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/blob/main/README.md",
+      "offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-ocp-ai/main/images/rh_ocp_ai.svg",
+      "provider_name": "IBM",
+      "features": [
+        {
+          "title": "Namespace",
+          "description": "Creates and configures a namespace in an existing Red Hat OpenShift cluster."
+        }
+      ],
+      "support_details": "This product is in the community registry, as such support is handled through the originated repo. If you experience issues kindly open an issue [here](https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/issues). Please note that this product is not currently supported through the IBM Cloud Support Center.",
+      "flavors": [
+        {
+          "label": "Standard",
+          "name": "standard",
+          "index": 1,
+          "install_type": "fullstack",
+          "working_directory": "solutions/standard",
+          "iam_permissions": [
+            {
+              "service_name": "containers-kubernetes",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Editor"
+              ],
+              "notes": "Required to create and edit Kubernetes resources."
+            }
+          ],
+          "architecture": {
+            "features": [
+                  {
+                    "title": " ",
+                    "description": "Configured for creating standalone Kubernetes namespaces."
+                  }
+            ],
+            "diagrams": [
+              {
+                "diagram": {
+                  "caption": "Resources on Red Hat OpenShift cluster",
+                  "url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/main/reference-architecture/deployable-architecture-kubernetes-resources.svg",
+                  "type": "image/svg+xml"
+                },
+                "description": "This deployable architecture deploys Kubernetes namespaces on an existing Red Hat OpenShift cluster."
+              }
+            ]
+          },
+          "configuration": [
+            {
+              "key": "ibmcloud_api_key"
+            },
+            {
+              "key": "region",
+              "required": true,
+              "type": "string",
+              "custom_config": {
+                "config_constraints": {
+                  "generationType": "2"
+                },
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "type": "vpc_region"
+              }
+            },
+            {
+              "key": "cluster_name",
+              "required": true
+            },
+            {
+              "key": "namespaces",
+              "required": true,
+              "display_name": "namespaces",
+              "type": "array",
+              "custom_config": {
+                "type": "textarea",
+                "grouping": "deployment",
+                "original_grouping": "deployment"
+              }
+            },
+            {
+              "key": "cluster_config_endpoint_type",
+              "options": [
+                {
+                  "displayname": "default",
+                  "value": "default"
+                },
+                {
+                  "displayname": "private",
+                  "value": "private"
+                },
+                {
+                  "displayname": "vpe",
+                  "value": "vpe"
+                },
+                {
+                  "displayname": "link",
+                  "value": "link"
+                }
+              ]
+            },
+            {
+              "key": "provider_visibility",
+              "options": [
+                {
+                  "displayname": "private",
+                  "value": "private"
+                },
+                {
+                  "displayname": "public",
+                  "value": "public"
+                },
+                {
+                  "displayname": "public-and-private",
+                  "value": "public-and-private"
+                }
+              ],
+              "hidden": true
+            }
+          ],
+          "dependency_version_2": true,
+          "terraform_version": "1.10.5"
+        }
+      ]
+    }
+  ]
+}
