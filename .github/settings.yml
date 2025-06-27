@@ -26,4 +26,4 @@ repository:
    description: "Provision Kubernetes resources on an existing cluster."
 
   # Use a comma-separated list of topics to set on the repo (ensure not to use any caps in the topic string).
-  topics: terraform, ibm-cloud, deployable-architecture, kubernetes, openshift, core-team, containers
+   topics: terraform, ibm-cloud, deployable-architecture, kubernetes, openshift, core-team, containers

@@ -75,5 +75,5 @@ data "ibm_container_cluster_config" "cluster_config" {
 # Sleep for 30 secs to allow RBAC sync on cluster
 resource "time_sleep" "wait_operators" {
   depends_on      = [data.ibm_container_cluster_config.cluster_config]
-  create_duration = "30s"
+  create_duration = "300s"
 }
