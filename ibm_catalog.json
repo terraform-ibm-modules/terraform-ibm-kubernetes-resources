@@ -101,6 +101,9 @@
               }
             },
             {
+              "key": "resource_group_id"
+            },
+            {
               "key": "cluster_config_endpoint_type",
               "options": [
                 {
