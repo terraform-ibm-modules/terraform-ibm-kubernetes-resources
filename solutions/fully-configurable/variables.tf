@@ -46,5 +46,5 @@ variable "namespaces" {
       annotations = map(string)
     }))
   }))
-  description = "Set of namespaces to create. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/blob/main/solutions/standard/DA-types.md#namespaces-)"
+  description = "Set of namespaces to create. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/blob/main/solutions/fully-configurable/DA-types.md#namespaces-)"
 }
