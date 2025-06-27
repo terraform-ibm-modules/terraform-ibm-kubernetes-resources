@@ -25,10 +25,10 @@ variable "cluster_name" {
   description = "The name of the existing cluster in which you want to create resources."
 }
 
-variable "resource_group_id" {
+variable "cluster_resource_group_id" {
   type        = string
   description = "The ID of the resource group in which cluster exists."
-  default     = ""
+  default     = null
 }
 
 variable "cluster_config_endpoint_type" {

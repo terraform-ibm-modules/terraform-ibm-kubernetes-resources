@@ -35,11 +35,11 @@
       "support_details": "This product is in the community registry, as such support is handled through the originated repo. If you experience issues kindly open an issue [here](https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/issues). Please note that this product is not currently supported through the IBM Cloud Support Center.",
       "flavors": [
         {
-          "label": "Standard",
-          "name": "standard",
+          "label": "Fully configurable",
+          "name": "fully-configurable",
           "index": 1,
           "install_type": "fullstack",
-          "working_directory": "solutions/standard",
+          "working_directory": "solutions/fully-configurable",
           "iam_permissions": [
             {
               "service_name": "containers-kubernetes",
@@ -101,7 +101,16 @@
               }
             },
             {
-              "key": "resource_group_id"
+              "key": "cluster_resource_group_id",
+              "required": true,
+              "custom_config": {
+                  "type": "resource_group",
+                  "grouping": "deployment",
+                  "original_grouping": "deployment",
+                  "config_constraints": {
+                      "identifier": "rg_id"
+                  }
+              }
             },
             {
               "key": "cluster_config_endpoint_type",
