@@ -28,12 +28,19 @@ TF_VARS_FILE="terraform.tfvars"
   cluster_name_key="cluster_name"
   cluster_name_value=$(terraform output -state=terraform.tfstate -raw cluster_name)
 
-  echo "Appending '${cluster_name_key}' input variable values to ${JSON_FILE}.."
+  cluster_resource_group_id_key="cluster_resource_group_id"
+  cluster_resource_group_id_value=$(terraform output -state=terraform.tfstate -raw resource_group_id)
+
+  echo "Appending '${cluster_name_key}' '${cluster_resource_group_id_key}' input variable values to ${JSON_FILE}.."
 
   cd "${cwd}"
-  jq -r --arg cluster_name_key "${cluster_name_key}" \
-        --arg cluster_name_value "${cluster_name_value}" \
-        '. + {($cluster_name_key): $cluster_name_value}' "${JSON_FILE}" > tmpfile && mv tmpfile "${JSON_FILE}" || exit 1
+  jq -r \
+  --arg cluster_name_key "${cluster_name_key}" \
+  --arg cluster_name_value "${cluster_name_value}" \
+  --arg cluster_resource_group_id_key "${cluster_resource_group_id_key}" \
+  --arg cluster_resource_group_id_value "${cluster_resource_group_id_value}" \
+  '. + {($cluster_name_key): $cluster_name_value, ($cluster_resource_group_id_key): $cluster_resource_group_id_value}' \
+  "${JSON_FILE}" > tmpfile && mv tmpfile "${JSON_FILE}" || exit 1
 
   echo "Pre-validation completed successfully."
 )

@@ -16,7 +16,7 @@ import (
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testschematic"
 )
 
-const solutionsDir = "solutions/standard"
+const solutionsDir = "solutions/fully-configurable"
 
 func validateEnvVariable(t *testing.T, varName string) string {
 	val, present := os.LookupEnv(varName)
@@ -89,6 +89,7 @@ func TestDAInSchematics(t *testing.T) {
 		{Name: "ibmcloud_api_key", Value: options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], DataType: "string", Secure: true},
 		{Name: "region", Value: region, DataType: "string"},
 		{Name: "cluster_name", Value: terraform.Output(t, existingTerraformOptions, "cluster_name"), DataType: "string"},
+		{Name: "cluster_resource_group_id", Value: terraform.Output(t, existingTerraformOptions, "resource_group_id"), DataType: "string"},
 		{Name: "namespaces", Value: namespaces, DataType: "list(object{})"},
 	}
 
@@ -124,6 +125,7 @@ func TestDAUpgradeInSchematics(t *testing.T) {
 		{Name: "ibmcloud_api_key", Value: options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], DataType: "string", Secure: true},
 		{Name: "region", Value: region, DataType: "string"},
 		{Name: "cluster_name", Value: terraform.Output(t, existingTerraformOptions, "cluster_name"), DataType: "string"},
+		{Name: "cluster_resource_group_id", Value: terraform.Output(t, existingTerraformOptions, "resource_group_id"), DataType: "string"},
 		{Name: "namespaces", Value: namespaces, DataType: "list(object{})"},
 	}
 
