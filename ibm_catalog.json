@@ -5,13 +5,14 @@
       "label": "Cloud automation for Kubernetes Resources",
       "product_kind": "solution",
       "tags": [
-        "containers",
+        "ibm_created",
         "target_terraform",
-        "target_roks",
         "terraform",
         "solution",
-        "ibm_created",
-        "clusters"
+        "containers",
+        "target_roks",
+        "clusters",
+        "converged_infra"
       ],
       "keywords": [
         "openshift",
@@ -52,10 +53,10 @@
           ],
           "architecture": {
             "features": [
-                  {
-                    "title": " ",
-                    "description": "Configured for creating standalone Kubernetes namespaces."
-                  }
+              {
+                "title": " ",
+                "description": "Configured for creating standalone Kubernetes namespaces."
+              }
             ],
             "diagrams": [
               {
@@ -104,12 +105,12 @@
               "key": "cluster_resource_group_id",
               "required": true,
               "custom_config": {
-                  "type": "resource_group",
-                  "grouping": "deployment",
-                  "original_grouping": "deployment",
-                  "config_constraints": {
-                      "identifier": "rg_id"
-                  }
+                "type": "resource_group",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "identifier": "rg_id"
+                }
               }
             },
             {
