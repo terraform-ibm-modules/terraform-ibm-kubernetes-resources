@@ -62,7 +62,7 @@
               {
                 "diagram": {
                   "caption": "Resources on Red Hat OpenShift cluster",
-                  "url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/main/reference-architecture/deployable-architecture-kubernetes-resources.svg",
+                  "url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/main/reference-architectures/deployable-architecture-kubernetes-resources.svg",
                   "type": "image/svg+xml"
                 },
                 "description": "This deployable architecture deploys Kubernetes namespaces on an existing Red Hat OpenShift cluster."
