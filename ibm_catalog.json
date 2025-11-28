@@ -23,7 +23,7 @@
         "solution"
       ],
       "short_description": "Automates the deployment of Kubernetes resources.",
-      "long_description": "This automation streamlines the deployment of Kubernetes resources such as namespace on an existing cluster.",
+      "long_description": "This automation streamlines the deployment of Kubernetes resources such as namespace on an existing cluster. \n\nLeverage [Terraform IBM Modules](https://github.com/terraform-ibm-modules) to shape and scale your solutions. You can integrate Terraform IBM Modules (TIM) to extend functionality and design a solution tailored to your environment and operations needs. These modules offer reusable, customizable elements that follow IBM Cloud's recommended practices. You can access the [source code and documentation](https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources) and use it to extend your current architecture or create new solutions.",
       "offering_docs_url": "https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/blob/main/README.md",
       "offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-ocp-ai/main/images/rh_ocp_ai.svg",
       "provider_name": "IBM",
@@ -31,6 +31,10 @@
         {
           "title": "Namespace",
           "description": "Creates and configures a namespace in an existing Red Hat OpenShift cluster."
+        },
+        {
+          "title": "Composable and Extensible Architecture",
+          "description": "This architecture illustrates how Terraform IBM Modules(TIM) can be integrated to deliver a complete solution on IBM Cloud. Each module is a reusable, and validated component for security, compliance, and operational IBM best practices. You can deploy this architecture as-is or configure it as code by leveraging the underlying modules to fit your specific requirements. Explore the [source code and documentation](https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources) to adapt, extend, or create entirely new solutions using these building blocks."
         }
       ],
       "support_details": "This product is in the community registry, as such support is handled through the originated repo. If you experience issues kindly open an issue [here](https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/issues). Please note that this product is not currently supported through the IBM Cloud Support Center.",
