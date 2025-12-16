@@ -45,6 +45,7 @@
           "index": 1,
           "install_type": "fullstack",
           "working_directory": "solutions/fully-configurable",
+          "short_description": "Ideal for users who want flexibility with a reliable starting point.",
           "iam_permissions": [
             {
               "service_name": "containers-kubernetes",
@@ -102,7 +103,12 @@
               "custom_config": {
                 "type": "code_editor",
                 "grouping": "deployment",
-                "original_grouping": "deployment"
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "supportedLanguages": [
+                    "hcl"
+                  ]
+                }
               }
             },
             {
