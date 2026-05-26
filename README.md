@@ -26,8 +26,12 @@ This repository contains DA of Kubernetes resources.
 <!-- The following content is automatically populated by the pre-commit hook -->
 <!-- BEGIN OVERVIEW HOOK -->
 ## Overview
-* [terraform-ibm-kubernetes-resources](#terraform-ibm-kubernetes-resources)
-* [Contributing](#contributing)
+<ul>
+  <li><a href="#terraform-ibm-kubernetes-resources">terraform-ibm-kubernetes-resources</a></li>
+  <li><a href="./solutions">Deployable Architectures</a>
+  </li>
+  <li><a href="#contributing">Contributing</a></li>
+</ul>
 <!-- END OVERVIEW HOOK -->
 
 
