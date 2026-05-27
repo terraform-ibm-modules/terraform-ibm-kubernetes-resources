@@ -2,6 +2,7 @@
 package test
 
 import (
+	"context"
 	"fmt"
 	"os"
 	"strings"
@@ -43,8 +44,8 @@ func setupTerraform(t *testing.T, prefix, realTerraformDir string) (string, *ter
 		Upgrade: true,
 	})
 
-	terraform.WorkspaceSelectOrNew(t, existingTerraformOptions, prefix)
-	_, err = terraform.InitAndApplyE(t, existingTerraformOptions)
+	terraform.WorkspaceSelectOrNewContext(t, context.Background(), existingTerraformOptions, prefix)
+	_, err = terraform.InitAndApplyContextE(t, context.Background(), existingTerraformOptions)
 	require.NoError(t, err, "Init and Apply of temp existing resource failed")
 
 	return region, existingTerraformOptions
@@ -56,8 +57,8 @@ func cleanupTerraform(t *testing.T, options *terraform.Options, prefix string) {
 		return
 	}
 	logger.Log(t, "START: Destroy (existing resources)")
-	terraform.Destroy(t, options)
-	terraform.WorkspaceDelete(t, options, prefix)
+	terraform.DestroyContext(t, context.Background(), options)
+	terraform.WorkspaceDeleteContext(t, context.Background(), options, prefix)
 	logger.Log(t, "END: Destroy (existing resources)")
 }
 
@@ -88,8 +89,8 @@ func TestDAInSchematics(t *testing.T) {
 	options.TerraformVars = []testschematic.TestSchematicTerraformVar{
 		{Name: "ibmcloud_api_key", Value: options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], DataType: "string", Secure: true},
 		{Name: "region", Value: region, DataType: "string"},
-		{Name: "cluster_name", Value: terraform.Output(t, existingTerraformOptions, "cluster_name"), DataType: "string"},
-		{Name: "cluster_resource_group_id", Value: terraform.Output(t, existingTerraformOptions, "resource_group_id"), DataType: "string"},
+		{Name: "cluster_name", Value: terraform.OutputContext(t, context.Background(), existingTerraformOptions, "cluster_name"), DataType: "string"},
+		{Name: "cluster_resource_group_id", Value: terraform.OutputContext(t, context.Background(), existingTerraformOptions, "resource_group_id"), DataType: "string"},
 		{Name: "namespaces", Value: namespaces, DataType: "list(object{})"},
 	}
 
@@ -124,8 +125,8 @@ func TestDAUpgradeInSchematics(t *testing.T) {
 	options.TerraformVars = []testschematic.TestSchematicTerraformVar{
 		{Name: "ibmcloud_api_key", Value: options.RequiredEnvironmentVars["TF_VAR_ibmcloud_api_key"], DataType: "string", Secure: true},
 		{Name: "region", Value: region, DataType: "string"},
-		{Name: "cluster_name", Value: terraform.Output(t, existingTerraformOptions, "cluster_name"), DataType: "string"},
-		{Name: "cluster_resource_group_id", Value: terraform.Output(t, existingTerraformOptions, "resource_group_id"), DataType: "string"},
+		{Name: "cluster_name", Value: terraform.OutputContext(t, context.Background(), existingTerraformOptions, "cluster_name"), DataType: "string"},
+		{Name: "cluster_resource_group_id", Value: terraform.OutputContext(t, context.Background(), existingTerraformOptions, "resource_group_id"), DataType: "string"},
 		{Name: "namespaces", Value: namespaces, DataType: "list(object{})"},
 	}
 
