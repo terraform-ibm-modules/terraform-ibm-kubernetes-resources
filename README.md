@@ -28,7 +28,7 @@ This repository contains DA of Kubernetes resources.
 ## Overview
 <ul>
   <li><a href="#terraform-ibm-kubernetes-resources">terraform-ibm-kubernetes-resources</a></li>
-  <li><a href="./solutions">Deployable Architectures</a>
+  <li><a href="https://github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources/tree/main/solutions">Deployable Architectures</a>
   </li>
   <li><a href="#contributing">Contributing</a></li>
 </ul>
