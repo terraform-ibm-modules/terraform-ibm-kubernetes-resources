@@ -13,6 +13,6 @@ data "ibm_container_cluster_config" "cluster_config" {
 
 module "namespaces" {
   source     = "terraform-ibm-modules/namespace/ibm"
-  version    = "2.0.1"
+  version    = "2.0.2"
   namespaces = var.namespaces
 }
