@@ -2,7 +2,7 @@ module github.com/terraform-ibm-modules/terraform-ibm-kubernetes-resources
 
 go 1.26.1
 
-toolchain go1.27.2
+toolchain go1.27.3
 
 require (
 	github.com/gruntwork-io/terratest v1.0.1
